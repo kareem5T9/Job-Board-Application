@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Board - Home</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- User Info Section -->
+        <div class="user-section">
+            <div class="user-info-card">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <p class="welcome-text">Welcome back!</p>
+                    <h2 class="user-email" id="currentUserName"></h2>
+
+                </div>
+            </div>
+            <button id="logOut" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
+        </div>
+
+        <!-- Jobs Display Page -->
+        <div id="jobs" class="page">
+            <div class="card">
+
+
+                <div class="page-title" style="justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                    <div class="flex">
+                        <i class="fas fa-briefcase"></i>
+                        <h2>Job Board</h2>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-outline" id="myApplicationsBtn">
+            <i class="fas fa-file-alt"></i> My Applications
+        </button>
+                        <button class="btn btn-primary" id="postJobBtn">
+            <i class="fas fa-plus"></i> Post New Job
+        </button>
+                    </div>
+                </div>
+                <p style="margin-bottom: 1.5rem; color: var(--gray)">
+                    Find your dream job from thousands of opportunities
+                </p>
+
+
+
+                <div id="jobs-container" class="jobs-grid">
+                    <!-- Jobs will be filled here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/home.js"></script>
+</body>
+
+</html>
