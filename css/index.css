@@ -1,8 +1,4 @@
-/* signup.css - مخصص فقط لصفحة Sign Up */
-
-/* Import Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
 :root {
     --primary: #4361ee;
     --primary-light: #5e7dfa;
@@ -42,13 +38,11 @@ body {
     padding: 0 20px;
 }
 
-/* الصفحات */
 .page {
     min-height: calc(100vh - 180px);
     padding: 2rem 0;
 }
 
-/* صفحات المصادقة */
 .auth-container {
     max-width: 500px;
     margin: 0 auto;
@@ -68,7 +62,6 @@ body {
     color: var(--gray);
 }
 
-/* البطاقات */
 .card {
     background-color: white;
     border-radius: var(--border-radius);
@@ -82,7 +75,6 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
-/* النماذج */
 .form-group {
     margin-bottom: 1.4rem;
 }
@@ -120,7 +112,6 @@ body {
     display: block;
 }
 
-/* الأزرار */
 .btn {
     padding: 0.6rem 1.2rem;
     border: none;
@@ -165,7 +156,6 @@ body {
     margin-top: 1rem;
 }
 
-/* الفاصل */
 .divider {
     display: flex;
     align-items: center;
@@ -186,7 +176,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* الرسائل */
 .message {
     padding: 1rem;
     border-radius: var(--border-radius);
@@ -224,20 +213,16 @@ body {
     display: none !important;
 }
 
-/* تصميم متجاوب */
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
     }
-    
     .page {
         padding: 1.5rem 0;
     }
-    
     .card {
         padding: 1.2rem;
     }
-    
     .auth-container {
         max-width: 100%;
     }
@@ -249,7 +234,6 @@ body {
     }
 }
 
-/* أسلوب شريط التمرير */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -269,7 +253,6 @@ body {
     background: var(--secondary);
 }
 
-/* أنماط التركيز لإمكانية الوصول */
 :focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
