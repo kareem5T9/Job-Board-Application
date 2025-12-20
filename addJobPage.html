@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post New Job</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="./home.html" class="btn btn-outline back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Jobs
+        </a>
+
+        <div class="page">
+            <div class="card">
+                <div class="page-title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Post New Job</h2>
+                </div>
+
+                <p class="page-description">
+                    Fill in the details to post a new job opportunity
+                </p>
+
+                <div class="error-message hidden" id="job-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span></span>
+                </div>
+
+                <div class="success-message hidden" id="job-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span></span>
+                </div>
+
+                <form id="job-form">
+                    <div class="form-group">
+                        <label for="job-title">
+                            <i class="fas fa-heading"></i> Job Title
+                        </label>
+                        <input type="text" id="job-title" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-company">
+                            <i class="fas fa-building"></i> Company Name
+                        </label>
+                        <input type="text" id="job-company" class="form-control" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="job-location">
+                                <i class="fas fa-map-marker-alt"></i> Location
+                            </label>
+                            <input type="text" id="job-location" class="form-control" required>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="job-type">
+                                <i class="fas fa-clock"></i> Job Type
+                            </label>
+                            <select id="job-type" class="form-control" required>
+                                <option value="">Select Job Type</option>
+                                <option value="full-time">Full Time</option>
+                                <option value="part-time">Part Time</option>
+                                <option value="contract">Contract</option>
+                                <option value="internship">Internship</option>
+                                <option value="remote">Remote</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job-category">
+                                <i class="fas fa-tag"></i> Category
+                            </label>
+                            <select id="job-category" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="it">Information Technology</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="finance">Finance</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="education">Education</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="sales">Sales</option>
+                                <option value="design">Design</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="job-experience">
+                                <i class="fas fa-chart-line"></i> Experience Level
+                            </label>
+                            <select id="job-experience" class="form-control" required>
+                                <option value="">Select Experience</option>
+                                <option value="entry">Entry Level (0-2 years)</option>
+                                <option value="mid">Mid Level (3-5 years)</option>
+                                <option value="senior">Senior Level (5+ years)</option>
+                                <option value="executive">Executive</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job-education">
+                                <i class="fas fa-graduation-cap"></i> Education Required
+                            </label>
+                            <select id="job-education" class="form-control" required>
+                                <option value="">Select Education</option>
+                                <option value="high-school">High School</option>
+                                <option value="associate">Associate Degree</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="phd">PhD</option>
+                                <option value="none">No Degree Required</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-description">
+                            <i class="fas fa-align-left"></i> Job Description
+                        </label>
+                        <textarea id="job-description" class="form-control" rows="6" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-requirements">
+                            <i class="fas fa-list-check"></i> Requirements (one per line)
+                        </label>
+                        <textarea id="job-requirements" class="form-control" rows="5" required></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="job-contact">
+                            <i class="fas fa-envelope"></i> Contact Email for Applications
+                        </label>
+                        <input type="email" id="job-contact" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-deadline">
+                            <i class="fas fa-calendar-times"></i> Application Deadline
+                        </label>
+                        <input type="date" id="job-deadline" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Post Job
+                    </button>
+
+                    <button type="reset" class="btn btn-outline btn-full">
+                        <i class="fas fa-eraser"></i> Clear Form
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/addJob.js"></script>
+</body>
+
+</html>
