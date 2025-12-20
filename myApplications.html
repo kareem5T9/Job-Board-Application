@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-section">
+            <div class="user-info-card">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <p class="welcome-text">Welcome back!</p>
+                    <h2 class="user-email" id="currentUserName"></h2>
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button onclick="location.href='home.html'" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Home
+                </button>
+                <button id="logOut" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="card">
+                <div class="page-title">
+                    <i class="fas fa-file-alt"></i>
+                    <h2>Applications Received</h2>
+                </div>
+                <p style="margin-bottom: 1.5rem; color: var(--gray)">
+                    View and manage applications for your job postings
+                </p>
+
+                <div id="loading" class="text-center" style="padding: 2rem;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 1rem; color: var(--gray);">Loading applications...</p>
+                </div>
+
+                <div id="applications-container" style="display: none;">
+                    <!-- Applications will be filled here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/myApplications.js"></script>
+</body>
+
+</html>
