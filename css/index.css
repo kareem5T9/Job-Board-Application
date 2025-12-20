@@ -1,135 +1,140 @@
+/* index.css - ملف CSS شامل لصفحات Login و Signup و Home و Add Job فقط */
+
+/* إستيراد Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 :root {
-    --primary: #3a86ff;
-    --primary-dark: #2667cc;
-    --secondary: #8338ec;
-    --success: #06d6a0;
-    --warning: #ffd166;
-    --error: #ef476f;
-    --dark: #1a1a2e;
+    /* الألوان الأساسية */
+    --primary: #4361ee;
+    --primary-light: #5e7dfa;
+    --secondary: #3a0ca3;
+    --accent: #4cc9f0;
     --light: #f8f9fa;
+    --dark: #212529;
     --gray: #6c757d;
-    --gray-light: #e9ecef;
-    --border: #dee2e6;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --light-gray: #e9ecef;
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --warning: #f39c12;
+    --info: #3498db;
+    
+    /* الزوايا والظلال */
+    --border-radius: 8px;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-    --radius: 8px;
-    --radius-lg: 12px;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
 }
 
+/* إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f5f7fb;
+    background-color: #f8fafc;
     color: var(--dark);
     line-height: 1.6;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 20px;
 }
 
+/* أنماط الصفحات العامة */
 .page {
-    width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 180px);
+    padding: 2rem 0;
+}
+
+/* فئة مساعدة */
+.flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-xl) 0;
+    gap: 4px;
 }
 
-.auth-container {
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
-}
-
-.auth-header {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.auth-header h2 {
-    color: var(--dark);
-    font-size: 2rem;
-    margin-bottom: var(--spacing-xs);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.auth-header p {
-    color: var(--gray);
-    font-size: 1rem;
-}
-
+/* أنماط البطاقات */
 .card {
     background-color: white;
-    border-radius: var(--radius-lg);
+    border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    padding: var(--spacing-lg);
-    width: 100%;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
 }
 
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* أنماط النماذج */
 .form-group {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.4rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     font-weight: 500;
     color: var(--dark);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .form-control {
     width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+    padding: 0.9rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     background-color: white;
 }
 
 .form-control:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    font-size: 1rem;
-    font-weight: 500;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+select.form-control {
     cursor: pointer;
+    background-color: white;
+}
+
+/* أنماط الأزرار */
+.btn {
+    padding: 0.6rem 1.2rem;
     border: none;
-    transition: all 0.3s ease;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    text-align: center;
     justify-content: center;
-    gap: 0.5rem;
 }
 
 .btn-primary {
@@ -138,179 +143,273 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--secondary);
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--primary);
     border: 1px solid var(--primary);
+    color: var(--primary);
 }
 
 .btn-outline:hover {
-    background-color: rgba(58, 134, 255, 0.1);
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
 }
 
-.error-message {
-    background-color: rgba(239, 71, 111, 0.1);
-    color: var(--error);
-    padding: var(--spacing-sm);
-    border-radius: var(--radius);
-    margin-bottom: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
 }
 
-.success-message {
-    background-color: rgba(6, 214, 160, 0.1);
-    color: var(--success);
-    padding: var(--spacing-sm);
-    border-radius: var(--radius);
-    margin-bottom: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* زر الرجوع */
+.back-btn {
+    margin: 20px 0;
+    display: inline-block;
 }
 
+/* أنماط صفحات المصادقة */
+.auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 1.8rem;
+}
+
+.auth-header h2 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.auth-header p {
+    color: var(--gray);
+}
+
+/* الفاصل */
 .divider {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: var(--spacing-lg) 0;
+    margin: 1.8rem 0;
     color: var(--gray);
 }
 
 .divider::before,
 .divider::after {
-    content: '';
+    content: "";
     flex: 1;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--light-gray);
 }
 
 .divider span {
     padding: 0 1rem;
+    font-size: 0.9rem;
 }
 
+/* أنماط الرسائل */
+.error-message {
+    background-color: #ffebee;
+    color: var(--error);
+    border-left: 4px solid var(--error);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    color: var(--success);
+    border-left: 4px solid var(--success);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* أنماط قسم المستخدم (Home Page) */
 .user-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 2rem 0;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) 0;
-    margin-bottom: var(--spacing-lg);
+    gap: 1rem;
 }
 
 .user-info-card {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    background-color: white;
-    padding: var(--spacing-md);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 1.2rem 1.8rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     flex: 1;
-    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-info-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
 }
 
 .user-avatar {
-    font-size: 3rem;
-    color: var(--primary);
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
 }
 
 .user-details {
     flex: 1;
+    z-index: 1;
 }
 
 .welcome-text {
-    color: var(--gray);
     font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
 }
 
 .user-email {
-    color: var(--dark);
-    font-size: 1.3rem;
-    margin-top: 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .logout-btn {
-    background-color: rgba(239, 71, 111, 0.1);
-    color: var(--error);
-    padding: 0.75rem 1.5rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+}
+
+.logout-btn i {
+    font-size: 18px;
 }
 
 .logout-btn:hover {
-    background-color: rgba(239, 71, 111, 0.2);
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
+/* أنماط صفحة Home */
 .page-title {
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+    gap: 12px;
+    color: var(--secondary);
 }
 
-.page-title h2 {
-    color: var(--dark);
-    font-size: 1.8rem;
-}
-
-.flex {
+.page-title i {
+    background: rgba(67, 97, 238, 0.1);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--primary);
 }
 
+.page-description {
+    margin-bottom: 1.5rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* أنماط شبكة الوظائف */
 .jobs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    gap: 1.8rem;
+    margin-top: 1.5rem;
 }
 
+/* بطاقات الوظائف */
 .job-card {
-    background-color: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: var(--spacing-md);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 1px solid transparent;
+    border-left: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .job-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .job-card-header {
-    margin-bottom: var(--spacing-sm);
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));
 }
 
 .job-company {
-    color: var(--gray);
     font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: 5px;
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .job-card-title {
-    color: var(--dark);
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--secondary);
+}
+
+.job-card-content {
+    padding: 1.2rem;
+    flex: 1;
 }
 
 .job-card-description {
     color: var(--gray);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
-    margin-bottom: var(--spacing-sm);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -320,14 +419,14 @@ body {
 .job-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .job-meta-item {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 5px;
     font-size: 0.85rem;
     color: var(--gray);
 }
@@ -336,109 +435,169 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--spacing-sm);
-    border-top: 1px solid var(--border);
+    padding: 0.8rem 1.2rem;
+    border-top: 1px solid var(--light-gray);
+    background: #f8f9fa;
 }
 
 .job-category {
-    background-color: var(--gray-light);
-    color: var(--gray);
-    padding: 0.25rem 0.75rem;
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
 }
 
 .job-type {
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
 }
 
 .type-full-time {
-    background-color: rgba(6, 214, 160, 0.1);
-    color: var(--success);
+    background: #d4edda;
+    color: #155724;
 }
 
 .type-part-time {
-    background-color: rgba(255, 209, 102, 0.1);
-    color: #d4a000;
+    background: #d1ecf1;
+    color: #0c5460;
 }
 
 .type-contract {
-    background-color: rgba(131, 56, 236, 0.1);
-    color: var(--secondary);
+    background: #f8d7da;
+    color: #721c24;
 }
 
 .type-internship {
-    background-color: rgba(58, 134, 255, 0.1);
-    color: var(--primary);
+    background: #fff3cd;
+    color: #856404;
 }
 
 .type-remote {
-    background-color: rgba(108, 117, 125, 0.1);
-    color: var(--gray);
+    background: #e2e3e5;
+    color: #383d41;
 }
 
+/* الحالة الفارغة */
 .empty-state {
     text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     grid-column: 1 / -1;
 }
 
 .empty-icon {
     font-size: 4rem;
-    color: var(--gray-light);
-    margin-bottom: var(--spacing-md);
+    color: var(--light-gray);
+    margin-bottom: 1rem;
 }
 
 .empty-title {
-    color: var(--dark);
     font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
 }
 
 .empty-description {
     color: var(--gray);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* أنماط خاصة بصفحة Add Job */
+#job-form {
+    margin-top: 1.5rem;
+}
+
+/* التجاوب مع الأجهزة المختلفة */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .jobs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
-    .auth-header h2 {
-        font-size: 1.5rem;
-    }
-    .page-title {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .jobs-grid {
-        grid-template-columns: 1fr;
-    }
     .user-section {
         flex-direction: column;
         align-items: stretch;
     }
+    
     .user-info-card {
-        min-width: auto;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .page {
+        padding: 1.5rem 0;
+    }
+    
+    .card {
+        padding: 1.2rem;
+    }
+    
+    .auth-container {
+        max-width: 100%;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 480px) {
-    .card {
-        padding: var(--spacing-md);
+@media (max-width: 576px) {
+    .jobs-grid {
+        grid-template-columns: 1fr;
     }
-    .auth-container {
-        padding: 0 var(--spacing-sm);
-    }
-    .btn {
-        width: 100%;
-    }
+    
     .job-meta {
         flex-direction: column;
         gap: 0.5rem;
     }
+    
+    .job-card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
 }
