@@ -97,9 +97,7 @@ function displayJobs(jobs) {
                     <span class="job-meta-item">
                         <i class="fas fa-map-marker-alt"></i> ${job.location}
                     </span>
-                    <span class="job-meta-item">
-                        <i class="fas fa-money-bill-wave"></i> ${job.salary}
-                    </span>
+                
                     <span class="job-meta-item">
                         <i class="fas fa-chart-line"></i> ${formatExperience(job.experience)}
                     </span>
