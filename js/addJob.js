@@ -103,7 +103,7 @@ jobForm.addEventListener("submit", async function(e) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
 
-        jobForm.reset();
+        // jobForm.reset();
 
 
         setTimeout(() => {
